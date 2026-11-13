@@ -23,11 +23,10 @@ public class Kuis27ney {
             int berat = sc.nextInt();
 
             if (berat > kapasitas) {
-                System.out.println("Berat cucian melebihi kapasitas. Ulangi!");
+                System.out.println("Kapasitas mesin penuh. Cucian pelanggan ke-" + (i + 1) + " tidak dapat dilayani.");
                 i--;
                 continue;
             }
-
             // Tarif: sampai 3 kg Rp 15000 (flat), lebih dari 3 kg ditambah Rp 4000 per kg kelebihannya
             int biaya;
             if (berat <= 3) {
@@ -51,6 +50,8 @@ public class Kuis27ney {
         System.out.println("Rata-rata berat : " + rataBerat + " kg");
         System.out.println("Biaya tertinggi : Rp " + (totalBiaya / n));
         System.out.println("Jumlah pelanggan yang terkena tarif lebih dari 3 kg: " + (int) (totalBerat / 3));
+        System.out.println("Jumlah pelanggan yang di layani: " + n);
+        System.out.println("Rata-rata berat dari pelanggan yang di layani: " + rataBerat + " kg");
 
         sc.close();
     }
