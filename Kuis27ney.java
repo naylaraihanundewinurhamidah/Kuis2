@@ -16,17 +16,26 @@ public class Kuis27ney {
             int biaya;
             if (berat <= 3) {
                 biaya = 15000;
+                if (berat < 1 || berat > 20) {
+                    System.out.println("Input tidak valid. Ulangi!");
+                    i--;
+                    continue;
+                    }
             } else {
                 biaya = 15000 + (berat - 3) * 4000;
             }
             totalBiaya += biaya;
             totalBerat += berat;
-            System.out.println("  Biaya: Rp " + biaya);
+            System.out.println("    Biaya: Rp " + biaya);
         }
 
         double rataBerat = totalBerat / n;
         System.out.println("=== REKAP HARIAN ===");
         System.out.println("Total pemasukan : Rp " + totalBiaya);
         System.out.println("Rata-rata berat : " + rataBerat + " kg");
+        System.out.println("Biaya tertinggi : Rp " + (totalBiaya / n));
+        System.out.println("Jumlah pelanggan yang terkena tarif lebih dari 3 kg: " + (int) (totalBerat / 3));
+
+        sc.close();
     }
 }
